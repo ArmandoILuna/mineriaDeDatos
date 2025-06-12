@@ -1,0 +1,198 @@
+body {
+    font-family: 'Montserrat', 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.header-bg {
+    background: linear-gradient(90deg, #3498db 0%, #6dd5fa 100%);
+    padding: 20px 0 12px 0;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+    margin-bottom: 18px;
+}
+.titulo-proyecto {
+    font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+    font-size: 2.3rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+    background: none;
+}
+.subtitulo {
+    color: #e0eafc;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Cuadricula de gráficas */
+.cuadricula {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+    margin: 40px auto;
+    max-width: 98vw;
+    padding: 0 2vw;
+}
+.grafica {
+    border-radius: 18px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+    padding: 24px 16px 16px 16px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: box-shadow 0.2s;
+}
+.grafica:hover {
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+}
+h2 {
+    margin: 16px 0 12px 0;
+    font-size: 1.2rem;
+    color: #3498db;
+    font-weight: 600;
+    text-align: center;
+}
+iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+/* Botón de info y tooltip */
+.info-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: auto;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+.info-btn:hover {
+    background: #217dbb;
+}
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    left: auto;
+    background: #222;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+    max-width: 220px;
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.grafica.show-tooltip .tooltip {
+    display: block;
+    animation: fadeIn 0.2s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+footer {
+    background: #fff;
+    color: #222;
+    padding: 24px 10px 8px 10px;
+    margin-top: 40px;
+    border-top: 3px solid #3498db;
+    font-family: 'Montserrat', Arial, sans-serif;
+    box-shadow: 0 -2px 16px rgba(44, 62, 80, 0.08);
+}
+.footer-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+.footer-info,
+.footer-equipo {
+    text-align: center;
+    min-width: 220px;
+    flex: 1;
+}
+.footer-ipn {
+    font-size: 1.1rem;
+    color: #b10d19;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.equipo-titulo {
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 4px;
+    font-size: 1.08rem;
+}
+.equipo-lista {
+    list-style: disc;
+    padding-left: 0;
+    margin: 8px 0 0 0;
+    display: inline-block;
+    text-align: left;
+}
+.equipo-lista li {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+.footer-extra {
+    display: block;
+    margin: 18px auto 0 auto;
+    font-size: 1rem;
+    color: #3498db;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+@media (max-width: 900px) {
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        max-width: 98vw;
+    }
+    .footer-info, .footer-equipo {
+        text-align: center;
+    }
+    .equipo-lista {
+        margin-left: 0;
+    }
+}

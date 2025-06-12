@@ -1,0 +1,16 @@
+PASOS PARA EJECUTAR EL PROYECTO
+
+1. Instala las dependencias:
+   pip install -r requirements.txt
+
+2. Asegúrate de tener el archivo de datos en: data/netflix_titles.csv
+
+3. Genera las gráficas ejecutando:
+   python src/graficas.py
+
+4. Abre docs/index.htm en tu navegador para ver la visualización.
+
+5. Para actualizar las gráficas:
+   - Modifica el archivo CSV si es necesario.
+   - Ejecuta de nuevo el script de gráficas.
+   - Refresca la página web.

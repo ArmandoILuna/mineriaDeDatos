@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Minería de Datos - Gráficas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-bg">
+        <h1 class="titulo-proyecto">Minería de Datos</h1>
+        <p class="subtitulo">Visualización Interactiva de Datos de Netflix</p>
+    </header>
+    <div class="cuadricula">
+        <div class="grafica">
+            <button class="info-btn" onclick="toggleTooltip(this)">i</button>
+            <div class="tooltip">
+                <strong>Gráfica de barras:</strong><br>
+                Muestra los 10 países con mayor cantidad de títulos en Netflix, permitiendo comparar la oferta de contenido por país.
+            </div>
+            <h2>Gráfica de Barras: Top 10 Países</h2>
+            <iframe src="../plots/grafica1.html"></iframe>
+        </div>
+        <div class="grafica">
+            <button class="info-btn" onclick="toggleTooltip(this)">i</button>
+            <div class="tooltip">
+                <strong>Histograma:</strong><br>
+                Representa la distribución de los años de lanzamiento de los títulos, mostrando en qué periodos se han estrenado más contenidos.
+            </div>
+            <h2>Histograma: Años de Lanzamiento</h2>
+            <iframe src="../plots/grafica2.html"></iframe>
+        </div>
+        <div class="grafica">
+            <button class="info-btn" onclick="toggleTooltip(this)">i</button>
+            <div class="tooltip">
+                <strong>Gráfica de cajas (boxplot):</strong><br>
+                Analiza la distribución de la duración de las películas en minutos, mostrando valores típicos y posibles atípicos.
+            </div>
+            <h2>Boxplot: Duración de Películas</h2>
+            <iframe src="../plots/grafica3.html"></iframe>
+        </div>
+        <div class="grafica">
+            <button class="info-btn" onclick="toggleTooltip(this)">i</button>
+            <div class="tooltip">
+                <strong>Mapa de calor:</strong><br>
+                Visualiza la cantidad de títulos por año de lanzamiento y clasificación (rating) desde el año 2000, facilitando la comparación entre categorías y tendencias temporales.
+            </div>
+            <h2>Mapa de Calor: Títulos por Año y Rating</h2>
+            <iframe src="../plots/grafica4.html"></iframe>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <div class="footer-ipn"><strong>Instituto Politécnico Nacional</strong></div>
+                <div>Unidad Profesional Inte                tree /Frdisciplinaria de Ingeniería y Ciencias Sociales y Administrativas</div>
+                <div><strong>Materia:</strong> Minería de Datos</div>
+                <div><strong>Profesor:</strong> Francisco Javier Bueno Vasquez</div>
+            </div>
+            <div class="footer-equipo">
+                <div class="equipo-titulo"><strong>Equipo:</strong></div>
+                <ul class="equipo-lista">
+                    <li>Carrillo Arteaga Dailyn Harumi</li>
+                    <li>Escamilla Aguilar Estefany Silvana</li>
+                    <li>Francisco Hernandez Jazmin</li>
+                    <li>Luna Elizalde Armando Isaac</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-extra">
+            Proyecto escolar realizado para la entrega final, junio 2025
+        </div>
+    </footer>
+    <script>
+        function toggleTooltip(btn) {
+            document.querySelectorAll('.grafica').forEach(g => {
+                if (g !== btn.parentElement) g.classList.remove('show-tooltip');
+            });
+            btn.parentElement.classList.toggle('show-tooltip');
+        }
+        document.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('info-btn')) {
+                document.querySelectorAll('.grafica').forEach(g => g.classList.remove('show-tooltip'));
+            }
+        });
+    </script>
+</body>
+</html>
