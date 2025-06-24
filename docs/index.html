@@ -47,6 +47,27 @@
                 Visualiza la cantidad de títulos por año de lanzamiento y clasificación de película desde el año 2000, facilitando la comparación entre categorías y tendencias temporales.
             </div>
             <h2>Mapa de Calor: Títulos por Año y Clasificación</h2>
+            <!-- Botón de flecha para clasificaciones -->
+            <button class="arrow-info-btn" onclick="toggleClasificaciones(this)" title="Ver significados de clasificaciones">&#8592;</button>
+            <div class="clasificaciones-info">
+                <strong>Significado de las clasificaciones:</strong>
+                <ul>
+                    <li><strong>G:</strong> Público general</li>
+                    <li><strong>NC-17:</strong> No apto para menores de 17 años</li>
+                    <li><strong>NR:</strong> No clasificada</li>
+                    <li><strong>PG:</strong> Guía paternal sugerida</li>
+                    <li><strong>PG-13:</strong> Guía paternal estricta para menores de 13</li>
+                    <li><strong>R:</strong> Restringida, menores acompañados de adulto</li>
+                    <li><strong>TV-14:</strong> No apto para menores de 14 años</li>
+                    <li><strong>TV-G:</strong> Público general (TV)</li>
+                    <li><strong>TV-MA:</strong> Solo adultos (TV)</li>
+                    <li><strong>TV-PG:</strong> Guía paternal sugerida (TV)</li>
+                    <li><strong>TV-Y:</strong> Público infantil (TV)</li>
+                    <li><strong>TV-V7:</strong> Dirigido a mayores de 7 años (TV)</li>
+                    <li><strong>TV-Y/-FV:</strong> Público infantil con violencia fantástica (TV)</li>
+                    <li><strong>UR:</strong> Sin clasificar oficialmente</li>
+                </ul>
+            </div>
             <iframe src="plots/grafica4.html"></iframe>
         </div>
     </div>
@@ -83,7 +104,17 @@
             if (!e.target.classList.contains('info-btn')) {
                 document.querySelectorAll('.grafica').forEach(g => g.classList.remove('show-tooltip'));
             }
+            // Oculta el recuadro de clasificaciones si se hace clic fuera
+            if (!e.target.classList.contains('arrow-info-btn')) {
+                document.querySelectorAll('.grafica .clasificaciones-info').forEach(c => c.classList.remove('show-clasificaciones'));
+            }
         });
+
+        // Mostrar/ocultar recuadro de clasificaciones
+        function toggleClasificaciones(btn) {
+            const infoBox = btn.parentElement.querySelector('.clasificaciones-info');
+            infoBox.classList.toggle('show-clasificaciones');
+        }
     </script>
 </body>
 </html>
